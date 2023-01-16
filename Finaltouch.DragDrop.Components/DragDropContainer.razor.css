@@ -1,0 +1,23 @@
+﻿.dd-container-list {
+				display: flex;
+				padding: 10px;
+				margin: 10px;
+				flex-flow: column nowrap;
+				align-content: space-between;
+				min-height: 106px;
+				width: 90%;
+				border-radius: 5px;
+				background-color: var(--bg-color, gray);
+				color: var(--color, black);
+				text-decoration: var(--text-decoration, none);
+}
+.column {
+				flex: 1 1 350px;
+}
+
+.title {
+				text-align: center;
+				font-weight: bold;
+				padding: 10px;
+				margin: 5px;
+}

@@ -1,0 +1,14 @@
+﻿@typeparam TItem
+<div @attributes="CapturedAttributes" data-container-id="@List?.Id" class="@ClassList">
+    <div class="title">@Title</div>
+    <div class="dd-container-list" style="@ContainerStyle">
+        @foreach (var item in List ?? new DragDropList<TItem>())
+        {
+            @if (ItemTemplate != default)
+            {
+                @ItemTemplate(item)
+            }
+        }
+    </div>
+</div>
+

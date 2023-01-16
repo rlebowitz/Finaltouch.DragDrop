@@ -1,0 +1,23 @@
+﻿.dd-item {
+				padding: 3px;
+				margin: 5px;
+				font-size: 15px;
+				color: var(--color, white);
+				background-color: var(--bg-color, lightgray);
+				text-decoration: var(--text-decorate, none);
+				border: 3px solid var(--border-color, lightgoldenrodyellow);
+				border-radius: 5px;
+}
+
+.task {
+				padding: 5px;
+}
+
+/*.handle {
+				cursor: move;
+}
+*/
+
+.moveCursor {
+	cursor: move;
+}
