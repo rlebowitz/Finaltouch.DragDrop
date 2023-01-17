@@ -1,7 +1,0 @@
-﻿@typeparam TItem
-<div @key="Item" data-item-id="@Item?.Id" class="@(DragDropOptions == null ? "dd-item" : DragDropOptions.ItemClass)" style="@DragDropStyle?.Style">
-    <div>
-        <span class="oi oi-menu handle" title="Handle" aria-hidden="true"></span>
-        <span class="task">@Item?.Text</span>
-    </div>
-</div>

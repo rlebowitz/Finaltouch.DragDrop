@@ -1,0 +1,48 @@
+/* _content/Finaltouch.DragDrop.Components/DragDropContainer.razor.rz.scp.css */
+.dd-container-list[b-jgsc0v9yjm] {
+				display: flex;
+				padding: 10px;
+				margin: 10px;
+				flex-flow: column nowrap;
+				align-content: space-between;
+				min-height: 106px;
+				width: 90%;
+				border-radius: 5px;
+				background-color: var(--bg-color, gray);
+				color: var(--color, black);
+				text-decoration: var(--text-decoration, none);
+}
+.column[b-jgsc0v9yjm] {
+				flex: 1 1 350px;
+}
+
+.title[b-jgsc0v9yjm] {
+				text-align: center;
+				font-weight: bold;
+				padding: 10px;
+				margin: 5px;
+}
+/* _content/Finaltouch.DragDrop.Components/DragDropItem.razor.rz.scp.css */
+.dd-item[b-0ug5h12tcz] {
+				padding: 3px;
+				margin: 5px;
+				font-size: 15px;
+				color: var(--color, white);
+				background-color: var(--bg-color, lightgray);
+				text-decoration: var(--text-decorate, none);
+				border: 3px solid var(--border-color, lightgoldenrodyellow);
+				border-radius: 5px;
+}
+
+.task[b-0ug5h12tcz] {
+				padding: 5px;
+}
+
+/*.handle {
+				cursor: move;
+}
+*/
+
+.moveCursor[b-0ug5h12tcz] {
+	cursor: move;
+}

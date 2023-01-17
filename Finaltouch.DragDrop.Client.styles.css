@@ -1,0 +1,97 @@
+@import '_content/Finaltouch.DragDrop.Components/Finaltouch.DragDrop.Components.bundle.scp.css';
+
+/* /Pages/Index.razor.rz.scp.css */
+.dd-component[b-dxj4kt0i8m] {
+				width: 100%;
+				margin-top: 15px;
+				margin-bottom: 15px;
+				border: 3px solid black;
+				border-radius: 5px;
+}
+.drag-scope[b-dxj4kt0i8m] {
+				display: flex;
+				justify-content: space-around;
+				background-color: white;
+}
+/* /Shared/MainLayout.razor.rz.scp.css */
+.page[b-rko8v75kgf] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-rko8v75kgf] {
+    flex: 1;
+}
+
+.sidebar[b-rko8v75kgf] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-rko8v75kgf] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-rko8v75kgf]  a, .top-row[b-rko8v75kgf]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-rko8v75kgf]  a:hover, .top-row[b-rko8v75kgf]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-rko8v75kgf]  a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-rko8v75kgf] {
+        display: none;
+    }
+
+    .top-row.auth[b-rko8v75kgf] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-rko8v75kgf]  a, .top-row[b-rko8v75kgf]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-rko8v75kgf] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-rko8v75kgf] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-rko8v75kgf] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth[b-rko8v75kgf]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row[b-rko8v75kgf], article[b-rko8v75kgf] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
