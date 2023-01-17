@@ -11,7 +11,7 @@ class DragDropResult {
     }
 }
 
-let dragDropHelper;
+
 
 /**
 JavaScript module that provides simple cross-platform drag and drop functionality to Blazor.
@@ -19,6 +19,7 @@ JavaScript module that provides simple cross-platform drag and drop functionalit
  */
 
 function DragDropInterop() {
+    let dragDropHelper;
     let options, draggingElement, rect, sourceContainerId, sourceItemId, raf;
     let x, y, deltaX, deltaY;
     x = y = deltaX = deltaY = 0;
@@ -200,6 +201,19 @@ function DragDropInterop() {
             }
         }, { offset: Number.NEGATIVE_INFINITY }).element
     }
+
+    /**
+     * Destructor method use to try and prevent memory leaks when the module is disposed 
+     * in the C# object.
+     */
+    this.destroy = function () {
+        options = draggingElement = rect = sourceContainerId = sourceItemId = raf = null;
+        x = y = deltaX = deltaY = null;
+        removeItemListeners();
+        document.removeEventListener('pointermove', pointerMove);
+        document.removeEventListener('pointerup', pointerUp);
+        dragDropHelper = null;
+    }
 }
 
-export const { initialize, addListeners } = new DragDropInterop();
+export const { initialize, addListeners, destroy } = new DragDropInterop();

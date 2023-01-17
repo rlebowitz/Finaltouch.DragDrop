@@ -1,5 +1,6 @@
 using Microsoft.JSInterop;
 using System.Text.Json;
+using Finaltouch.DragDrop.Components.Utilities;
 
 namespace Finaltouch.DragDrop.Components
 {
@@ -57,7 +58,8 @@ namespace Finaltouch.DragDrop.Components
             if (ModuleTask != null && ModuleTask.IsValueCreated)
             {
                 var module = await ModuleTask.Value;
-                await module.DisposeAsync();
+                var awaiter = module.InvokeVoidAsync("destroy").GetAwaiter();
+                awaiter.OnCompleted(async () => await module.DisposeAsync());
             }
         }
     }
