@@ -17,10 +17,10 @@ class DragDropResult {
 JavaScript module that provides simple cross-platform drag and drop functionality to Blazor.
 @constructor
  */
-let dragDropHelper;
 
 function DragDropInterop() {
-    let options, draggingElement, rect, sourceContainerId, sourceItemId;
+    let dragDropHelper;
+    let options, draggingElement, rect, sourceContainerId, sourceItemId, raf;
     let x, y, deltaX, deltaY;
     x = y = deltaX = deltaY = 0;
 
@@ -128,9 +128,19 @@ function DragDropInterop() {
      * @param {any} event - a 'pointermove' event.
      */
     const pointerMove = function (event) {
-        deltaX = event.clientX - x;
-        deltaY = event.clientY - y;
+        if (!raf) {
+            deltaX = event.clientX - x;
+            deltaY = event.clientY - y;
+            raf = requestAnimationFrame(pointerMoveRAF);
+        }
+    };
+    /**
+     * Private method called by the request animation frame that animates the item/element's movement.
+     * Once the element is finished rendering the frame variable is released to allow the next rendering.
+     */
+    const pointerMoveRAF = function () {
         draggingElement.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0px)`;
+        raf = null;
     };
     /**
      * Private method called when the mouse button or pointer device is released (dragging has completed).
@@ -140,6 +150,12 @@ function DragDropInterop() {
         // clean up
         document.removeEventListener('pointermove', pointerMove);
         document.removeEventListener('pointerup', pointerUp);
+        // if the animation frame rendering was in process when the button or pointer device was release,
+        // this will cancel the scheduled rendering.
+        if (raf) {
+            cancelAnimationFrame(raf);
+            raf = null;
+        };
         draggingElement.style.left = `${rect.left + deltaX}px`;
         draggingElement.style.top = `${rect.top + deltaY}px`;
         draggingElement.style.transform = 'translate3d(0px,0px,0px)';
@@ -157,7 +173,6 @@ function DragDropInterop() {
                 afterElement = getDragAfterElement(container, event.clientY);
             }
             let targetItemId = !!afterElement ? afterElement.dataset.itemId : '';
-
             // create result object
             let result = new DragDropResult(sourceItemId, sourceContainerId, targetItemId, container.dataset.containerId);
             // remove the listeners to avoid possible memory leaks
