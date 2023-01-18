@@ -14,5 +14,9 @@ My tests thus far indicate that my library works on the following:
 2.  Edge on Windows 11
 3.  Firefox on Android
 
-Oddly enough, it doesn't work on Chrome on Android.  My phone has the lastest version (109) which, according to Can I Use supports the JavaScript features
-I use to add drag and drop functionality, but it does not seem to work with this browser.  I'll add additional test results as I receive them.
+The library doesn't work on:
+1.  Chrome on Android (v.109)
+2.  Opera on Android (v.72)
+3.  Samsung Internet (v.19)
+
+Can I Use says that all these latter browsers support both the requestAnimationFrame and pointer events, though it appears that the support is very recent (Oct-Dec 2022)  I'm wondering if there are still bugs in the Chromium mobile engine that are affecting this.  
