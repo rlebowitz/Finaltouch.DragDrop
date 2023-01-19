@@ -32,7 +32,7 @@ function DragDropInterop() {
         itemClass: 'dd-item',
         handleClass: 'handle',
         sort: true,
-        clone: false
+        clone: false 
     };
 
     /**
