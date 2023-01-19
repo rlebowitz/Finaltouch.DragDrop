@@ -28,11 +28,11 @@ function DragDropInterop() {
         Default options which can be overridden by passing in a DropDropOptions object 
      */
     const defaults = {
-        componentClass: 'dd-component',
         containerClass: 'dd-container',
         itemClass: 'dd-item',
         handleClass: 'handle',
-        sort: true
+        sort: true,
+        clone: false
     };
 
     /**

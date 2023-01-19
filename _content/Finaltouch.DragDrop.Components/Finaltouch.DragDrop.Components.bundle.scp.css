@@ -24,14 +24,15 @@
 }
 /* _content/Finaltouch.DragDrop.Components/DragDropItem.razor.rz.scp.css */
 .dd-item[b-0ug5h12tcz] {
-				padding: 3px;
-				margin: 5px;
-				font-size: 15px;
-				color: var(--color, white);
-				background-color: var(--bg-color, lightgray);
-				text-decoration: var(--text-decorate, none);
-				border: 3px solid var(--border-color, lightgoldenrodyellow);
-				border-radius: 5px;
+	padding: 3px;
+	margin: 5px;
+	font-size: 15px;
+	color: var(--color, white);
+	background-color: var(--bg-color, lightgray);
+	text-decoration: var(--text-decorate, none);
+	border: 3px solid var(--border-color, lightgoldenrodyellow);
+	border-radius: 5px;
+	touch-action: none;
 }
 
 .task[b-0ug5h12tcz] {
