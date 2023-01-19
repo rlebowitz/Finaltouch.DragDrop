@@ -9,3 +9,4 @@ One of the primary reasons for my developing this alternative drag and drop libr
 Drag and Drop API does not work on IOS devices and thus limits its use if your goal is design across all the major platforms.  
 
 Read the technical details in my blog post:  https://blog.finaltouch.com/2023/01/a-cross-platform-drag-and-drop-library_17.html
+
