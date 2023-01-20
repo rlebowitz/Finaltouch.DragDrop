@@ -1,6 +1,8 @@
 ﻿@page "/clone"
 @layout MainLayout
 <div style="color:white;background-image:url('images/deathstar.jpg')">
+    <br />
+    <br />
     <h3 style="width:100%;text-align:center;margin-top:10px;">Help Clone More Storm Troopers For The</h3>
     <div style="text-align:center">
         <img src="images/galactic_republic.png" style="height:100px;width:auto" />
@@ -11,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex flex-wrap align-items-center justify-content-center">
-                <img src="images/stormtrooperhelmet.png" style="height:75px;width:auto" />
+                <img src="images/trooper.png" style="height:75px;width:auto" />
             </div>
         </div>
     </div>
@@ -22,8 +24,8 @@
         <div class="card-group card-group-scroll">
             @for(var count=0; count < Counter; count++)
             {
-                <div class="card">
-                    <img src="images/stormtrooperhelmet.png" class="card-img" style="height:50px;width:fit-content" />
+                <div class="card" style="background-color:transparent">
+                    <img src="images/trooper.png" class="card-img" style="height:50px;width:fit-content;background-color:transparent" />
                 </div>
             }
         </div>
