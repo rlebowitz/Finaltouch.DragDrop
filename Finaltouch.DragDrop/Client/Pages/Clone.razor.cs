@@ -7,6 +7,6 @@ namespace Finaltouch.DragDrop.Client.Pages
 {
     public partial class Clone : ComponentBase
     {
-
+        private int Counter { get; set; } = 3;
     }
 }
