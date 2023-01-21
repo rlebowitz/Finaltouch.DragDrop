@@ -8,13 +8,11 @@ namespace Finaltouch.DragDrop.Client.Pages
     {
         [Inject]
         private DragDropInterop? DragDropInterop { get; set; }
-        private DragDropOptions DragDropOptions { get; set; } = new()
-        { Clone = true, Sort = false, HandleClass = string.Empty };
+        private DragDropOptions DragDropOptions { get; set; } = new() { Clone = true, Sort = false };
         private string SourceContainerId = "primeContainer";
         private string SourceItemId = "prime";
         private string TargetContainerId = "cloneContainer";
         private List<TrooperItem> Troopers = new();
-        private int Counter { get; set; } = 0;
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -29,7 +27,6 @@ namespace Finaltouch.DragDrop.Client.Pages
             {
                 await DragDropInterop.AddListeners();
             }
-            await base.OnAfterRenderAsync(firstRender);
         }
 
         public async Task OnRelease(DragDropResult result)
