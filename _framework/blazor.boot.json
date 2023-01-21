@@ -8,9 +8,9 @@
   "resources": {
     "assembly": {
       "BlazorComponentUtilities.dll": "sha256-eDp5c3t6atzlthDvZL2SpINQcSYs7gBnbOHNS\/1MkUU=",
-      "Finaltouch.DragDrop.Client.dll": "sha256-tNQi23DoBfriJ5vYlav23zAzYE3L23P8kO7iB836B4s=",
+      "Finaltouch.DragDrop.Client.dll": "sha256-DcxxiU\/evW4+awiCLMzzAvdk1MMDwv5ydh6ZHa0IkC4=",
       "Finaltouch.DragDrop.Components.dll": "sha256-3PWIwVRXoaQr+xDlRMNQtWlQZ784GSvYkLAqr9EsHX4=",
-      "Finaltouch.DragDrop.Shared.dll": "sha256-ziILDmrpmxOkpuBXxzO9+HlEYUdw5a8M+1NQ3Kr3QlY=",
+      "Finaltouch.DragDrop.Shared.dll": "sha256-55fOP19O\/TjLYsjsnbtAG8SDJapuqA66vcvArustmIM=",
       "Microsoft.AspNetCore.Components.dll": "sha256-C+Fpf8ovVWP36bOS3NFSpkRjSQ2lWf1u3qLTeNTfAHg=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-xbljJkHE5KLll7mQpC+wXP9vzkyjydGEqjedSx\/04pU=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-2Jg3mQhCSyqkofbgXHMRw0whL7fAl07+VKYd0lApk7I=",
@@ -27,7 +27,7 @@
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-ClhDy3j6C2coeaYSd71VzhinK6w5QGa2ViwhRhQ6L40=",
       "netstandard.dll": "sha256-8C402O+DbuikA\/zjtH4gPexGmdf1CH51qHEK3vow4u0=",
       "System.Collections.Concurrent.dll": "sha256-ZCGcf9YX0pSzKBEW7t54fQqR4Gv6mgwW\/4a7AFxzGxc=",
-      "System.Collections.dll": "sha256-lcDyaiRF9iqGil3s6SjgtQn1a6jOzXQGDs32Rb0bpe8=",
+      "System.Collections.dll": "sha256-f+Mpf6o\/ZjZbnlmfqJApqISjclpyGarQuz397ebHSoM=",
       "System.ComponentModel.dll": "sha256-Ai6Dlg1M21zcB936W5gTAjo76y3+XiR4JS1iNPR0ENA=",
       "System.ComponentModel.Primitives.dll": "sha256-33tzItL6XGqPJX1cJ+L3uCXbU\/iCTS4zxd60ZZ6nC9k=",
       "System.ComponentModel.TypeConverter.dll": "sha256-D3ZGQ73lwrXo\/YkFbiO3jG7xux066STjinAUcpaLksc=",

@@ -4,6 +4,30 @@
 .white[b-oxeeuwr079] {
     color: white;
 }
+
+.outerDive[b-oxeeuwr079]{
+    width: 100%;
+}
+
+.innerDiv[b-oxeeuwr079] {
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center;*/ /* Centering y-axis */
+    align-items: center; /* Centering x-axis */
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 90%;
+    margin: auto;
+    min-height: 100px;
+}
+
+.dd-item[b-oxeeuwr079] {
+    touch-action: none;
+}
+
+.moveCursor[b-oxeeuwr079] {
+    cursor: move;
+}
 /* /Pages/Index.razor.rz.scp.css */
 .dd-component[b-dxj4kt0i8m] {
 				width: 100%;
@@ -98,4 +122,26 @@ main[b-rko8v75kgf] {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
+}
+/* /Shared/StormTrooperItem.razor.rz.scp.css */
+.dd-item[b-7w7tcv6z68] {
+	padding: 3px;
+	margin: 5px;
+	font-size: 15px;
+	color: var(--color, white);
+	background-color: var(--bg-color, lightgray);
+	text-decoration: var(--text-decorate, none);
+	border: 3px solid var(--border-color, lightgoldenrodyellow);
+	border-radius: 5px;
+	touch-action: none;
+}
+
+.moveCursor[b-7w7tcv6z68] {
+	cursor: move;
+}
+
+.miniTrooper[b-7w7tcv6z68] {
+	height: 50px;
+	width: auto;
+	background-color: transparent;
 }
