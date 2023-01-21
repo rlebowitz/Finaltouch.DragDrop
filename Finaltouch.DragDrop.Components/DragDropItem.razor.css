@@ -9,16 +9,9 @@
 	border-radius: 5px;
 	touch-action: none;
 }
-
 .task {
 				padding: 5px;
 }
-
-/*.handle {
-				cursor: move;
-}
-*/
-
 .moveCursor {
 	cursor: move;
 }
