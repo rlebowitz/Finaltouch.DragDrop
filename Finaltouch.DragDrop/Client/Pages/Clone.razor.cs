@@ -1,12 +1,63 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Finaltouch.DragDrop.Components;
+using Finaltouch.DragDrop.Shared;
+using Microsoft.AspNetCore.Components;
 
 namespace Finaltouch.DragDrop.Client.Pages
 {
     public partial class Clone : ComponentBase
     {
-        private int Counter { get; set; } = 3;
+        [Inject]
+        private DragDropInterop? DragDropInterop { get; set; }
+        private DragDropOptions DragDropOptions { get; set; } = new()
+        { Clone = true, Sort = false, HandleClass = string.Empty };
+        private string SourceContainerId = "primeContainer";
+        private string SourceItemId = "prime";
+        private string TargetContainerId = "cloneContainer";
+        private List<TrooperItem> Troopers = new();
+        private int Counter { get; set; } = 0;
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                if (DragDropInterop != null)
+                {
+                    await DragDropInterop.Initialize(OnRelease, DragDropOptions);
+                }
+            }
+            if (DragDropInterop != null)
+            {
+                await DragDropInterop.AddListeners();
+            }
+            await base.OnAfterRenderAsync(firstRender);
+        }
+
+        public async Task OnRelease(DragDropResult result)
+        {
+            if (TargetContainerId == result.TargetContainerId)
+            {
+                var item = new TrooperItem();
+                item.Text = GetTrooper(item?.Id);
+                if (item != null)
+                {
+                    Troopers.Add(item);
+                }
+            }
+            StateHasChanged();
+            await Task.CompletedTask;
+        }
+
+        private RenderFragment GetTrooper(string? id)
+        {
+            return builder =>
+            {
+                builder.OpenElement(0, "img");
+                builder.AddAttribute(1, "src", "images/trooper.png");
+                builder.AddAttribute(2, "class", "miniTrooper");
+                builder.AddAttribute(3, "data-item-id", id);
+                builder.AddAttribute(4, "style", "height:50px;width:auto");
+                builder.CloseElement();
+            };
+        }
     }
 }

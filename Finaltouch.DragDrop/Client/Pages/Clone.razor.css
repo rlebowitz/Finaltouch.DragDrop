@@ -1,3 +1,27 @@
 ﻿.white {
     color: white;
 }
+
+.outerDive{
+    width: 100%;
+}
+
+.innerDiv {
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center;*/ /* Centering y-axis */
+    align-items: center; /* Centering x-axis */
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 90%;
+    margin: auto;
+    min-height: 100px;
+}
+
+.dd-item {
+    touch-action: none;
+}
+
+.moveCursor {
+    cursor: move;
+}

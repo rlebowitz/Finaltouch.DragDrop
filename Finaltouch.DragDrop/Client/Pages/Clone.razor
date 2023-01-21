@@ -10,23 +10,22 @@
     <div style="text-align:center">
         <div>Drag the Storm Trooper to the box below!</div>
     </div>
-    <div class="container">
+    <div class="container dd-container" data-container-id="@SourceContainerId">
         <div class="row">
             <div class="col-12 d-flex flex-wrap align-items-center justify-content-center">
-                <img src="images/trooper.png" style="height:75px;width:auto" />
+                <img src="images/trooper.png" style="height:75px;width:auto" data-item-id="@SourceItemId" class="dd-item" />
             </div>
         </div>
     </div>
     <br />
     <br />
-    <div style="border: 3px solid white;border-radius:5px;width:90%;margin:auto;min-height:100px;">
-        @*https://mdbootstrap.com/docs/standard/extended/horizontal-list/*@
-        <div class="card-group card-group-scroll">
-            @for(var count=0; count < Counter; count++)
+    <div class="outerDiv dd-container" data-container-id="@TargetContainerId">
+        <div class="innerDiv">
+            @foreach (var trooper in Troopers)
             {
-                <div class="card" style="background-color:transparent">
-                    <img src="images/trooper.png" class="card-img" style="height:50px;width:fit-content;background-color:transparent" />
-                </div>
+                <span>
+                    @trooper.Text
+                </span>
             }
         </div>
     </div>
