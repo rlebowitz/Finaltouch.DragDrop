@@ -34,16 +34,9 @@
 	border-radius: 5px;
 	touch-action: none;
 }
-
 .task[b-0ug5h12tcz] {
 				padding: 5px;
 }
-
-/*.handle {
-				cursor: move;
-}
-*/
-
 .moveCursor[b-0ug5h12tcz] {
 	cursor: move;
 }
