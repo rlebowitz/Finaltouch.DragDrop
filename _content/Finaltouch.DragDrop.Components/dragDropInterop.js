@@ -64,9 +64,9 @@ function DragDropInterop() {
      * Method used to add event listeners to all of the draggable items/elements.
      */
     this.addListeners = function () {
-        let items = Array.from(document.querySelectorAll(`.${options.itemClass}`));
+        let items = [...document.querySelectorAll(`.${options.itemClass}`)];
         items.forEach(item => {
-            item.addEventListener('pointerdown', pointerDown, { passive: true });
+            item.addEventListener('pointerdown', pointerDown, { passive: false });
             if (!options.handleClass) {
                 // change the item's cursor to the move cursor
                 item.classList.add('moveCursor');
@@ -83,9 +83,9 @@ function DragDropInterop() {
      * Method used to remove the event listeners from all draggable items/elements.
      */
     const removeItemListeners = function () {
-        let items = Array.from(document.querySelectorAll(`.${options.itemClass}`));
+        let items = [...document.querySelectorAll(`.${options.itemClass}`)];
         items.forEach(item => {
-            item.removeEventListener('pointerdown', pointerDown, { passive: true });
+            item.removeEventListener('pointerdown', pointerDown, { passive: false });
         });
     };
     /**
@@ -94,6 +94,7 @@ function DragDropInterop() {
      * @param {any} event - a 'pointerdown' event.
      */
     const pointerDown = function (event) {
+        event.preventDefault();
         if (options.handleClass && event.target.classList.contains(options.handleClass)) {
             // the handle is presumably within the draggable item, so locate the item itself
             draggingElement = event.target.closest(`.${options.itemClass}`);
@@ -107,6 +108,7 @@ function DragDropInterop() {
             }
         }
         if (!!draggingElement) {
+            draggingElement.setPointerCapture(event.pointerId);
             draggingElement.classList.add('dragging');
             x = event.clientX;
             y = event.clientY;
@@ -116,8 +118,8 @@ function DragDropInterop() {
                 sourceContainerId = container.dataset.containerId;
                 sourceItemId = draggingElement.dataset.itemId;
             }
-            document.addEventListener('pointermove', pointerMove, { passive: true });
-            document.addEventListener('pointerup', pointerUp, { passive: true });
+            document.addEventListener('pointermove', pointerMove, { passive: false });
+            document.addEventListener('pointerup', pointerUp, { passive: false });
         }
     }
 
@@ -128,11 +130,12 @@ function DragDropInterop() {
      * @param {any} event - a 'pointermove' event.
      */
     const pointerMove = function (event) {
-        if (!raf) {
+      //  if (!raf) {
             deltaX = event.clientX - x;
-            deltaY = event.clientY - y;
-            raf = requestAnimationFrame(pointerMoveRAF);
-        }
+        deltaY = event.clientY - y;
+        draggingElement.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0px)`;
+//            raf = requestAnimationFrame(pointerMoveRAF);
+      //  }
     };
     /**
      * Private method called by the request animation frame that animates the item/element's movement.
@@ -176,7 +179,7 @@ function DragDropInterop() {
             // create result object
             let result = new DragDropResult(sourceItemId, sourceContainerId, targetItemId, container.dataset.containerId);
             // remove the listeners to avoid possible memory leaks
-            removeItemListeners();
+ //           removeItemListeners();
             // pass back the DragDropResult to the C# object
             dragDropHelper.invokeMethodAsync('OnPointerUp', result);
         }
