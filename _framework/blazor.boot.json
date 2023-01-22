@@ -8,7 +8,7 @@
   "resources": {
     "assembly": {
       "BlazorComponentUtilities.dll": "sha256-eDp5c3t6atzlthDvZL2SpINQcSYs7gBnbOHNS\/1MkUU=",
-      "Finaltouch.DragDrop.Client.dll": "sha256-yNZptX9sev8HNWKWsv3CqAcQRXye0NHgg58RJ40VxXk=",
+      "Finaltouch.DragDrop.Client.dll": "sha256-chtQcThrNhxw+j\/6qNUfQoKHagJnT2RFpeWvxNHpekg=",
       "Finaltouch.DragDrop.Components.dll": "sha256-3PWIwVRXoaQr+xDlRMNQtWlQZ784GSvYkLAqr9EsHX4=",
       "Finaltouch.DragDrop.Shared.dll": "sha256-55fOP19O\/TjLYsjsnbtAG8SDJapuqA66vcvArustmIM=",
       "Microsoft.AspNetCore.Components.dll": "sha256-z7ffcGP8hTlxu5xiaDFwDHLBAGn9qjBiD1MNjn3gps0=",
